@@ -1,1 +1,1 @@
-Data Structure 2024 Laboratories
+Data Structures 2024 Laboratories
