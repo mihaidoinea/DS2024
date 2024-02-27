@@ -1,0 +1,5 @@
+﻿  Source.c
+C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(29,10): warning C4047: '<': 'int' differs in levels of indirection from 'int *'
+C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(34,11): warning C4047: '<': 'int' differs in levels of indirection from 'int *'
+C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(40,8): warning C4047: '=': 'int **' differs in levels of indirection from 'int *'
+  G1063S01.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\x64\Debug\G1063S01.exe
