@@ -1,0 +1,4 @@
+﻿  Source.c
+C:\Users\mdoinea\dev\vstudio\DS2024\G1072S01\Source.c(24,19): warning C4013: 'malloc' undefined; assuming extern returning int
+C:\Users\mdoinea\dev\vstudio\DS2024\G1072S01\Source.c(35,2): warning C4013: 'free' undefined; assuming extern returning int
+  G1072S01.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\G1072S01\Debug\G1072S01.exe
