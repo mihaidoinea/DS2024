@@ -1,0 +1,4 @@
+Popescu Maria, 2000.3, 255
+Ionescu Catalin, 1200.3, 33029
+Calin Ana, 2300.1, 127
+Toma Alex, 3400.3, 65535
