@@ -1,0 +1,4 @@
+Popescu Maria, 1500.5, 28
+Ionescu Catalin, 1100.3, 33772
+Anghel Ioana, 2300.7, 123
+Calin George, 4300.2, 33100
