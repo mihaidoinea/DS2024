@@ -17,6 +17,7 @@ typedef struct Stud
 }Student;
 #define LINE_SIZE 256
 Student* createStudent(const char*, float, unsigned short);
+void printStudent(Student*);
 void main()
 {
 	Student* agenda[10];
@@ -50,6 +51,15 @@ void main()
 				agenda[i] = NULL;
 			}
 		}
+	}
+}
+void printStudent(Student* stud)
+{
+	if (stud)
+	{
+		printf("Name: %s\n", stud->name);
+		printf("Income: %f\n", stud->income);
+		printf("Name: %d\n", stud->reference.extRef);
 	}
 }
 Student* createStudent(const char* name, float income, 
