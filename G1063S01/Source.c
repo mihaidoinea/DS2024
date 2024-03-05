@@ -22,6 +22,15 @@ void insertNumber(int**, int, int*);
 Student* createStudent(const char*, float, unsigned short);
 void printStudent(Student*);
 
+
+typedef struct Letter
+{
+	int	:5;
+	int sign : 1;
+	int : 2;
+} *PLetter;
+
+
 void main()
 {
 	int* array = NULL;
@@ -67,6 +76,15 @@ void printStudent(Student* pStud)
 {
 	if (pStud != NULL)
 	{
+		PLetter ptrLetter;
+		for (int i = 0; i < strlen(pStud->name); i++)
+		{
+			if (pStud->name[i] != ' ')
+			{
+				ptrLetter = &pStud->name[i];
+				ptrLetter->sign = ~ptrLetter->sign;
+			}
+		}
 		printf("Name: %s, income: %f\n", pStud->name, pStud->income);
 		if (pStud->reference.extRef >> 15 == 1)
 		{
