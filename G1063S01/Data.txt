@@ -1,4 +1,4 @@
 Popescu Maria, 2300.5, 127
-Ionescu Catalin, 1900.5, 32800
+Ionescu Catalin, 1900.5, 33056
 Antonescu Ioan, 3900.2, 26
 Georgescu Radu, 3000.2, 33230

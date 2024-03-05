@@ -19,6 +19,8 @@ typedef struct Stud Student;
 
 void insertNumber(int**, int, int*);
 Student* createStudent(const char*, float, unsigned short);
+void printStudent(Student*);
+
 void main()
 {
 	int* array = NULL;
@@ -56,9 +58,28 @@ void main()
 			ref = atoi(token);
 			Student* stud = createStudent(name, income, ref);
 			catalog[index++] = stud;
+			printStudent(stud);
 		}
 	}
 }
+void printStudent(Student* pStud)
+{
+	if (pStud != NULL)
+	{
+		printf("Name: %s, income: %f\n", pStud->name, pStud->income);
+		if (pStud->reference.extRef >> 15 == 1)
+		{
+			short uid = pStud->reference.extRef >> 8 & 127;
+			printf("University ref: %d\n", uid);
+			printf("External ref: %d\n", pStud->reference.intRef);
+		}
+		else
+		{
+			printf("Internal ref: %d\n", pStud->reference.intRef);
+		}
+	}
+}
+
 Student* createStudent(const char* name, float income, unsigned short ref)
 {
 	//1.define variable for info
