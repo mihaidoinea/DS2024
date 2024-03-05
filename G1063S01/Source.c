@@ -1,7 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <malloc.h>
-
+#include <stdlib.h>
+#include <string.h>
 #define LINE_SIZE 256
 union Ref
 {
@@ -45,7 +46,7 @@ void main()
 	if (pFile)
 	{
 		char lineBuffer[LINE_SIZE], name[LINE_SIZE];
-		float income; unsigned short ref;
+		float income=0.0; unsigned short ref;
 		char* token; char delimiter[] = "\n,";
 		int index = 0;
 		while (fgets(lineBuffer, sizeof(lineBuffer), pFile))

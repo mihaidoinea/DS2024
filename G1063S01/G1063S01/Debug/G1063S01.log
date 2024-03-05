@@ -1,14 +1,7 @@
 ﻿  Source.c
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(43,2): warning C4013: 'memset' undefined; assuming extern returning int
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(53,12): warning C4013: 'strtok' undefined; assuming extern returning int
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(53,10): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(54,4): warning C4013: 'strcpy' undefined; assuming extern returning int
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(55,10): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(56,13): warning C4013: 'atof' undefined; assuming extern returning int
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(56,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(57,10): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(58,10): warning C4013: 'atoi' undefined; assuming extern returning int
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(41,10): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(41,77): warning C4305: 'initializing': truncation from 'int' to 'unsigned char'
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(90,29): warning C4013: 'strlen' undefined; assuming extern returning int
+C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(44,18): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
+C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(44,18): warning C4024: 'memset': different types for formal and actual parameter 2
+C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(57,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(42,10): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(42,77): warning C4305: 'initializing': truncation from 'int' to 'unsigned char'
   G1063S01.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Debug\G1063S01.exe
