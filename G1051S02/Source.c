@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "stdio.h"
 #include "string.h"
 #include "malloc.h"
@@ -14,7 +15,19 @@ typedef struct Student
 	float income;
 	Reference reference;
 }Student;
+
+
+typedef struct BitReference
+{
+	unsigned short ref : 8;
+	short uniId : 7;
+	short type : 1;
+}BitReference;
+
+void printStudent(Student*);
+Student* createStudent(const char*, float, unsigned short);
 #define LINE_SIZE 256
+
 void main()
 {
 	Student* catalog[10];
@@ -58,6 +71,54 @@ void main()
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
 			catalog[index++] = stud;
+			printStudent(stud);
 		}
 	}
+}
+void printStudent(Student* stud)
+{
+	if (stud != NULL)
+	{
+		printf("Name: %s\n", stud->name);
+		printf("Income: %f\n", stud->income);
+		BitReference* pRef = &stud->reference.extRef;
+		if (pRef->type == 0)
+		{
+			printf("Reference: %d\n", pRef->ref);
+		}
+		else
+		{
+			printf("Reference ext: %d\n", stud->reference.extRef);
+			printf("University id: %d\n", pRef->uniId);
+			printf("Reference: %d\n", pRef->ref);
+		}
+		/*
+		if (stud->reference.extRef >> 15 == 0)
+		{
+			printf("Reference: %d\n", stud->reference.intRef);
+		}
+		else
+		{
+			printf("Reference ext: %d\n", stud->reference.extRef);
+			char univId = stud->reference.extRef >> 8 & 127;
+			printf("University id: %d\n", univId);
+			printf("Reference: %d\n", stud->reference.extRef & 255);
+		}*/
+		printf("\n");
+	}
+}
+
+Student* createStudent(const char* name, float income, unsigned short ref)
+{
+	//1.define variable
+	Student* stud = NULL;
+	//2.allocate memory
+	stud = (Student*)malloc(sizeof(Student));
+	//3.initialize attributes
+	stud->name = (char*)malloc(strlen(name) + 1);
+	strcpy(stud->name, name);
+	stud->income = income;
+	stud->reference.extRef = ref;
+	//4.return variable
+	return stud;
 }
