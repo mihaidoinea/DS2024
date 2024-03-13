@@ -27,11 +27,12 @@ typedef struct BitReference
 void printStudent(Student*);
 Student* createStudent(const char*, float, unsigned short);
 #define LINE_SIZE 256
-
+void insertStudent(Student*** vector, Student* stud, int* dim);
 void main()
 {
-	Student* catalog[10];
-	memset(catalog, 0, sizeof(catalog));
+	//Student* catalog[10];
+	Student* catalog = NULL;
+	//memset(catalog, 0, sizeof(catalog));
 
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -58,7 +59,7 @@ void main()
 		*/
 		char delimiter[] = ",";
 		char* token = NULL; 
-		float income; int index = 0;
+		float income; int index = 0, size = 0;
 		unsigned short reference;
 		char buffer[LINE_SIZE], name[LINE_SIZE];
 		while (fgets(buffer, sizeof(buffer), pFile))
@@ -70,10 +71,29 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			catalog[index++] = stud;
+			//catalog[index++] = stud;
+			insertStudent(&catalog, stud, &size);
 			printStudent(stud);
 		}
 	}
+}
+void insertStudent(Student*** vector, Student* stud, int* dim)
+{
+	Student** tmp = (Student**)malloc(sizeof(Student*) * (*dim + 1));
+	int i = 0, k = 0;
+	//if((*vector)[i] != NULL)
+	while (i < *dim && stud->income > (*vector)[i]->income)
+	{
+		tmp[k++] = (*vector)[i++];
+	}
+	tmp[k++] = stud;
+	while (i < *dim)
+	{
+		tmp[k++] = (*vector)[i++];
+	}
+	(*dim)++;
+	free(*vector);
+	*vector = tmp;
 }
 void printStudent(Student* stud)
 {
