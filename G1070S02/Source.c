@@ -15,13 +15,24 @@ typedef struct Stud
 	float income;
 	Reference reference;
 }Student;
+typedef struct BitReference
+{
+	unsigned int reference : 8;
+	unsigned int univId : 7;
+	unsigned int type : 1;
+}BitReference;
+
+
 #define LINE_SIZE 256
 Student* createStudent(const char*, float, unsigned short);
 void printStudent(Student*);
+
 void main()
 {
-	Student* agenda[10];
-	memset(agenda, 0, sizeof(agenda));
+	//Student** agenda = NULL;
+	Student* agenda;
+	int size = 0;
+	//memset(agenda, 0, sizeof(agenda));
 	FILE* pFile = fopen("Data.txt","r");
 	if (pFile)
 	{
@@ -38,10 +49,11 @@ void main()
 			token = strtok(NULL, delimiters);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			agenda[index++] = stud;
+			//agenda[index++] = stud;
+			insertStudent(&agenda, stud, &size);
 		}
 
-		for (int i = 0; i < sizeof(agenda) / sizeof(Student*); i++)
+		for (int i = 0; i < sizeof(agenda)/sizeof(Student*); i++)
 		{
 			if (agenda[i] != NULL)
 			{
@@ -53,13 +65,51 @@ void main()
 		}
 	}
 }
+
+void insertStudent(Student*** vector, Student* stud, int* size)
+{
+	Student** tmp = (Student**)malloc(sizeof(Student*) * (*size + 1));
+	int k = 0, i = 0;
+	while (i < *size && stud->income>(*vector)[i]->income)
+	{
+		tmp[k++] = (*vector)[i++];
+	}
+	tmp[k++] = stud;
+	while (i < *size)
+	{
+		tmp[k++] = (*vector)[i++];
+	}
+	free(*vector);
+	*vector = tmp;
+	(*size)++;
+}
+
 void printStudent(Student* stud)
 {
 	if (stud)
 	{
 		printf("Name: %s\n", stud->name);
 		printf("Income: %f\n", stud->income);
-		printf("Name: %d\n", stud->reference.extRef);
+		BitReference* ptrReference = &stud->reference.extRef;
+		if (ptrReference->type == 1)
+		{
+			printf("University id: %d\n", ptrReference->univId);
+		}
+		printf("Student reference: %d\n", ptrReference->reference);
+		
+		/*
+		if (stud->reference.extRef >> 15 != 0)
+		{
+			printf("Student reference: %d\n", stud->reference.extRef);
+			char univId = stud->reference.extRef >> 8 & 127;
+			printf("University id: %d\n", univId);
+			//printf("Student reference: %d\n", stud->reference.intRef);
+			printf("Student reference: %d\n", stud->reference.extRef & 255);
+		}
+		else
+		{
+			printf("Student reference: %d\n", stud->reference.intRef);
+		}*/
 	}
 }
 Student* createStudent(const char* name, float income, 
