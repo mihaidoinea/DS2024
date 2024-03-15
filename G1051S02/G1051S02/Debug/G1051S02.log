@@ -1,4 +1,0 @@
-﻿  Source.c
-C:\Users\mdoinea\dev\vstudio\DS2024\G1051S02\Source.c(70,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\mdoinea\dev\vstudio\DS2024\G1051S02\Source.c(104,17): warning C4133: 'initializing': incompatible types - from 'unsigned short *' to 'BitReference *'
-  G1051S02.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\G1051S02\Debug\G1051S02.exe

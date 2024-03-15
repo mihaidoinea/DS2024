@@ -1,5 +1,0 @@
-﻿  Source.c
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\Source.c(37,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\Source.c(43,36): warning C4020: 'freeMemory': too many actual parameters
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\Source.c(47,1): warning C4029: declared formal parameter list different from definition
-  G1072S02.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\Debug\G1072S02.exe

@@ -1,4 +1,0 @@
-﻿  Source.c
-C:\Users\mdoinea\dev\vstudio\DS2024\DS02\Source.c(31,22): warning C4013: 'strlen' undefined; assuming extern returning int
-C:\Users\mdoinea\dev\vstudio\DS2024\DS02\Source.c(34,11): warning C4133: 'initializing': incompatible types - from 'char *' to 'Letter *'
-  DS02.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\DS02\x64\Debug\DS02.exe

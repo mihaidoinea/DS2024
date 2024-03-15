@@ -1,7 +1,0 @@
-﻿  Source.c
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(44,18): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(44,18): warning C4024: 'memset': different types for formal and actual parameter 2
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(57,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(42,10): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Source.c(42,77): warning C4305: 'initializing': truncation from 'int' to 'unsigned char'
-  G1063S01.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\G1063S01\Debug\G1063S01.exe

@@ -1,3 +1,0 @@
-﻿  Source.c
-C:\Users\mdoinea\dev\vstudio\DS2024\ProjectTemplate\Source.c(20,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  ProjectTemplate.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\ProjectTemplate\x64\Debug\ProjectTemplate.exe

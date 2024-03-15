@@ -1,6 +1,0 @@
-﻿  Source.c
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\Source.c(52,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\Source.c(58,36): warning C4020: 'freeMemory': too many actual parameters
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\Source.c(33,11): warning C4133: 'initializing': incompatible types - from 'char *' to 'Letter *'
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\Source.c(62,1): warning C4029: declared formal parameter list different from definition
-  G1072S02.vcxproj -> C:\Users\mdoinea\dev\vstudio\DS2024\G1072S02\x64\Debug\G1072S02.exe
