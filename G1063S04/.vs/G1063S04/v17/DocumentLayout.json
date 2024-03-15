@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\G1063S04\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{06FBECEE-9CD6-48B1-95CE-D43632B22AE7}|G1063S04.vcxproj|C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\G1063S04\\ListUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{06FBECEE-9CD6-48B1-95CE-D43632B22AE7}|G1063S04.vcxproj|solutionrelative:ListUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06FBECEE-9CD6-48B1-95CE-D43632B22AE7}|G1063S04.vcxproj|C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\G1063S04\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{06FBECEE-9CD6-48B1-95CE-D43632B22AE7}|G1063S04.vcxproj|solutionrelative:Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Source.c",
+              "DocumentMoniker": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\G1063S04\\Source.c",
+              "RelativeDocumentMoniker": "Source.c",
+              "ToolTip": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\G1063S04\\Source.c",
+              "RelativeToolTip": "Source.c",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAkAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-03-13T08:02:01.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListUtil.h",
+              "DocumentMoniker": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\G1063S04\\ListUtil.h",
+              "RelativeDocumentMoniker": "ListUtil.h",
+              "ToolTip": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\G1063S04\\ListUtil.h",
+              "RelativeToolTip": "ListUtil.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-13T08:01:44.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

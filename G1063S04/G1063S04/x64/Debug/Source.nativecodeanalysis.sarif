@@ -1,0 +1,266 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "Dereferencing NULL pointer 'stud'. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 2,
+                  "endLine": 23,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "createStudent",
+                  "decoratedName": "createStudent",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                          },
+                          "region": {
+                            "startLine": 19,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                          },
+                          "region": {
+                            "startLine": 21,
+                            "startColumn": 7
+                          }
+                        },
+                        "message": {
+                          "text": "'stud' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                          },
+                          "region": {
+                            "startLine": 23,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "'stud' is dereferenced, but may still be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "'stud->name' could be '0':  this does not adhere to the specification for the function 'strcpy'. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 2,
+                  "endLine": 24,
+                  "endColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "createStudent",
+                  "decoratedName": "createStudent",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                          },
+                          "region": {
+                            "startLine": 19,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                          },
+                          "region": {
+                            "startLine": 21,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                          },
+                          "region": {
+                            "startLine": 23,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                          },
+                          "region": {
+                            "startLine": 24,
+                            "startColumn": 2
+                          }
+                        },
+                        "message": {
+                          "text": "'name' is an In/Out argument to 'strcpy' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\string.h:130)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+                          },
+                          "region": {
+                            "startLine": 24,
+                            "startColumn": 2
+                          }
+                        },
+                        "message": {
+                          "text": "'stud->name' should not be NULL, because this is not consistent with the SAL annotation on 'strcpy'"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.39.33519.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/mdoinea/dev/vstudio/DS2024/G1063S04/DataUtil.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "637092d02b7353eda40739bcf80b6752e3dc1a0134f3328ebaa8ba20d94f6124"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mdoinea/dev/vstudio/ds2024/g1063s04/source.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "04d9d935cc08644823561adc89d72e8509688680bdba618f1e5b878fda9771a2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mdoinea/dev/vstudio/ds2024/g1063s04/main.h"
+          },
+          "hashes": {
+            "sha-256": "51733ae1f6ae5c2e62daf143f1e3690ee1b34e638159dfcb820c3f7cb5a9703c"
+          }
+        }
+      ]
+    }
+  ]
+}
