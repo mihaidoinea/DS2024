@@ -1,9 +1,0 @@
-﻿  Source.c
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S04\ListUtil.h(41,11): error C2040: 'deleteList': 'ListNode *(ListNode *,const char *)' differs in levels of indirection from 'void (ListNode **)'
-  (compiling source file 'Source.c')
-  
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S04\Source.c(10,6): error C2084: function 'void fa()' already has a body
-  C:\Users\mdoinea\dev\vstudio\DS2024\G1072S04\Source.c(6,6):
-  see previous definition of 'fa'
-  
-C:\Users\mdoinea\dev\vstudio\DS2024\G1072S04\Source.c(40,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
