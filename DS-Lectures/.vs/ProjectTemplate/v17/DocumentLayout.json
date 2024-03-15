@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\ListUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|solutionrelative:ListUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\Data.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|solutionrelative:Data.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|solutionrelative:Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\DataUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|solutionrelative:DataUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A31E62E2-A6B0-4D2E-A06E-0443C9933140}|ProjectTemplate.vcxproj|solutionrelative:main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListUtil.h",
+              "DocumentMoniker": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\ListUtil.h",
+              "RelativeDocumentMoniker": "ListUtil.h",
+              "ToolTip": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\ListUtil.h",
+              "RelativeToolTip": "ListUtil.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-13T14:44:07.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "main.h",
+              "DocumentMoniker": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\main.h",
+              "RelativeDocumentMoniker": "main.h",
+              "ToolTip": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\main.h",
+              "RelativeToolTip": "main.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-06T07:32:12.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataUtil.h",
+              "DocumentMoniker": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\DataUtil.h",
+              "RelativeDocumentMoniker": "DataUtil.h",
+              "ToolTip": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\DataUtil.h",
+              "RelativeToolTip": "DataUtil.h",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwA8AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-12T05:27:38.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Data.txt",
+              "DocumentMoniker": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\Data.txt",
+              "RelativeDocumentMoniker": "Data.txt",
+              "ToolTip": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\Data.txt",
+              "RelativeToolTip": "Data.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-03-04T16:21:46.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Source.c",
+              "DocumentMoniker": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\Source.c",
+              "RelativeDocumentMoniker": "Source.c",
+              "ToolTip": "C:\\Users\\mdoinea\\dev\\vstudio\\DS2024\\ProjectTemplate\\Source.c",
+              "RelativeToolTip": "Source.c",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACMAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-03-12T05:27:17.797Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
