@@ -6,7 +6,7 @@ typedef struct Letter
 	int : 2;
 }Letter;
 
-void main()
+void DS02()
 {
 	int var1 = 7;
 	int var2 = 8;

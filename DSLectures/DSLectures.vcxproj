@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a31e62e2-a6b0-4d2e-a06e-0443c9933140}</ProjectGuid>
-    <RootNamespace>ProjectTemplate</RootNamespace>
+    <ProjectGuid>{ec5591eb-eaa9-4ccc-a7a6-57f589501d3d}</ProjectGuid>
+    <RootNamespace>DSLectures</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,15 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.c" />
+    <ClCompile Include="DS02.c" />
+    <ClCompile Include="DS04.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="main.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
