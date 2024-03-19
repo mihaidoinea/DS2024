@@ -30,11 +30,12 @@ void main()
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
 			//printStudent(stud);
-			//insertStudentSL(&pHeadList, stud);
-			pHeadList = insertStudentSL(pHeadList, stud);
+			insertStudentDL(&pHeadList, stud);
+			//pHeadList = insertStudentSL(pHeadList, stud);
 		}
 		//data structure operation
-		deleteStudent(&pHeadList, "Popa Maria");
+		traverseList(pHeadList);
+		//deleteStudent(&pHeadList, "Popa Maria");
 		PListNode tmp = pHeadList;
 		while (tmp != NULL)
 		{

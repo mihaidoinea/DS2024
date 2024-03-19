@@ -29,9 +29,18 @@ void deleteNode(ListNode* node)
 
 void insertStudentDL(ListNode** headList, Student* stud)
 {
+	ListNode* node = createNode(stud);
+	if (*headList != NULL)
+	{
+		node->next = *headList;
+		(*headList)->prev = node;
+	}
+	*headList = node;
+}
+void traverseList(ListNode* headList)
+{
 
 }
-
 ListNode* insertStudentSL(ListNode* headList, Student* stud)
 {
 	ListNode* node = createNode(stud);
