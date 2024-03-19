@@ -47,16 +47,18 @@ void traverseList(ListNode* headList)
 	//printStudent(headList);
 	if (headList)
 	{
+		ListNode* tmp = NULL;
 		do
 		{
 			printStudent(headList->info);
+			tmp = headList;
 			headList = headList->next;
-		} while (headList->next != NULL);
+		} while (headList != NULL);
 		printf("----------------Reverse order-----------------\n");
-		while (headList)
+		while (tmp)
 		{
-			printStudent(headList->info);
-			headList = headList->prev;
+			printStudent(tmp->info);
+			tmp = tmp->prev;
 		}
 	}
 }
