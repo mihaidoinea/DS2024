@@ -39,8 +39,38 @@ void insertStudentDL(ListNode** headList, Student* stud)
 }
 void traverseList(ListNode* headList)
 {
-
+	//while (headList && headList->next != NULL)
+	//{
+	//	printStudent(headList->info);
+	//	headList = headList->next;
+	//}
+	//printStudent(headList);
+	if (headList)
+	{
+		do
+		{
+			printStudent(headList->info);
+			headList = headList->next;
+		} while (headList->next != NULL);
+		printf("----------------Reverse order-----------------\n");
+		while (headList)
+		{
+			printStudent(headList->info);
+			headList = headList->prev;
+		}
+	}
 }
+void deleteList(ListNode** headList)
+{
+	while (*headList != NULL)
+	{
+		ListNode* tmp = *headList;
+		*headList = (*headList)->next;
+		printStudent(tmp->info);
+		deleteNode(tmp);
+	}
+}
+
 ListNode* insertStudentSL(ListNode* headList, Student* stud)
 {
 	ListNode* node = createNode(stud);

@@ -35,12 +35,14 @@ void main()
 		}
 		//data structure operation
 		traverseList(pHeadList);
+		printf("---------------Stergerea nodurilor----------------\n");
+		deleteList(&pHeadList);
 		//deleteStudent(&pHeadList, "Popa Maria");
-		PListNode tmp = pHeadList;
+		/*PListNode tmp = pHeadList;
 		while (tmp != NULL)
 		{
 			printStudent(tmp->info);
 			tmp = tmp->next;
-		}
+		}*/
 	}
 }
