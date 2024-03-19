@@ -45,3 +45,11 @@ void printStudent(Student* stud)
 		}
 	}
 }
+void deleteStudent(Student* stud)
+{
+	if (stud != NULL)
+	{
+		free(stud->name);
+		free(stud);
+	}
+}

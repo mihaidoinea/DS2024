@@ -5,24 +5,47 @@ typedef struct Node
 {
 	Student* info;
 	struct Node* next;
+	struct Node* prev;
 }ListNode, *PListNode;
 
-void insertStudent(ListNode** headList, Student* stud)
+ListNode* createNode(Student* stud)
 {
-	ListNode* node = (ListNode*)malloc(sizeof(ListNode));
+	ListNode* node = NULL;
+	node = (ListNode*)malloc(sizeof(ListNode));
 	node->info = stud;
-	node->next = *headList;
-	*headList = node;
+	node->next = node->prev = NULL;
+	return node;
 }
-ListNode* insertListStudent(ListNode* headList, Student* stud)
+void deleteNode(ListNode* node)
 {
-	ListNode* node = (ListNode*)malloc(sizeof(ListNode));
-	node->info = stud;
+	if (node != NULL)
+	{
+		//free(node->info->name);
+		//free(node->info);
+		deleteStudent(node->info);
+		free(node);
+	}
+}
+
+void insertStudentDL(ListNode** headList, Student* stud)
+{
+
+}
+
+ListNode* insertStudentSL(ListNode* headList, Student* stud)
+{
+	ListNode* node = createNode(stud);
 	node->next = headList;
 	return node;
 }
-void deleteStudent(ListNode** headList, const char* name)
-{
-	PListNode tmp = *headList;
-	
-}
+//void insertStudentSL(ListNode** headList, Student* stud)
+//{
+//	ListNode* node = createNode(stud);
+//	node->next = *headList;
+//	*headList = node;
+//}
+//void deleteStudent(ListNode** headList, const char* name)
+//{
+//	PListNode tmp = *headList;
+//	
+//}

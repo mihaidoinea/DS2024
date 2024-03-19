@@ -8,9 +8,10 @@ void main()
 	//struct Node list1 = {.info = NULL, .next=NULL};
 	//ListNode list2 = {.info = NULL, .next = NULL};
 	//PListNode plist3 = NULL;
-	ListNode* pHeadList = NULL;
+	
 	//struct Node* plist5 = NULL;
 
+	ListNode* pHeadList = NULL;
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -29,8 +30,8 @@ void main()
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
 			//printStudent(stud);
-			//insertStudent(&pHeadList, stud);
-			pHeadList = insertListStudent(pHeadList, stud);
+			//insertStudentSL(&pHeadList, stud);
+			pHeadList = insertStudentSL(pHeadList, stud);
 		}
 		//data structure operation
 		deleteStudent(&pHeadList, "Popa Maria");
