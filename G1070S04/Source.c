@@ -31,10 +31,12 @@ void main()
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
 			//printStudent(stud);
-			//insertStudent(&headList, stud);
-			headList = insertStudent(headList, stud);
+			//insertHead_SLNode(&headList, stud);
+			//headList = insertHead_SLNode(headList, stud);
+			headList = insertTail_DLNode(headList, stud);
 		}
-		deleteStudent(&headList, "Popa Maria");
+		displayListBothWays(headList);
+		deleteNodeByKey(&headList, "Popa Maria");
 		deleteList(&headList);
 		//data structure operation
 	}
