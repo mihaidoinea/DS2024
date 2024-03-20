@@ -32,10 +32,10 @@ void main()
 			//printStudent(stud);
 			//ListNode* node = createNode(stud);
 			//insertStudent(&headList, stud);
-			headList = insertList(headList, stud);
+			headList = insertHead_SLNode(headList, stud);
 		}
 		//data structure operation
 		deleteList(&headList);
-		//headList = deleteList(headList, "Albu Cristina");
+		headList = deleteNodeByKey(headList, "Albu Cristina");
 	}
 }

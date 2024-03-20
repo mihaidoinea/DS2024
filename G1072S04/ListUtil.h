@@ -2,25 +2,40 @@
 #include "DataUtil.h"
 typedef struct Node
 {
+	struct Node* prev;
 	Student* info;
 	struct Node* next;
 }ListNode, *PListNode;
 
-//void insertNode(ListNode** list, Student* stud)
-void insertNode(PListNode* list, Student* stud)
+void deleteNode(ListNode* node)
 {
-	//PListNode node;
+	if (node != NULL)
+	{
+		deleteStudent(node->info);
+		free(node);
+	}
+}
+
+ListNode* createNode(Student* stud)
+{
 	ListNode* node = NULL;
 	node = (ListNode*)malloc(sizeof(ListNode));
 	node->info = stud;
-	node->next = *list;
-	*list = node;
+	node->next = node->prev = NULL;
+	return node;
 }
-PListNode insertList(PListNode list, Student* stud)
+
+//void insertNode(ListNode** list, Student* stud)
+//void insertHead_SLNode(PListNode* list, Student* stud)
+//{
+//	//PListNode node;
+//	ListNode* node = createNode(stud);
+//	node->next = *list;
+//	*list = node;
+//}
+PListNode insertHead_SLNode(PListNode list, Student* stud)
 {
-	PListNode node = NULL;
-	node = (PListNode)malloc(sizeof(ListNode));
-	node->info = stud;
+	PListNode node = createNode(stud);
 	node->next = list;
 	return node;
 }
@@ -38,7 +53,7 @@ void deleteList(ListNode** list)
 	}
 }
 
-ListNode* deleteList(ListNode* list, const char* key)
+ListNode* deleteNodeByKey(ListNode* list, const char* key)
 {
 	if (strcmp(list->info->name, key) == 0)
 	{
@@ -57,7 +72,9 @@ ListNode* deleteList(ListNode* list, const char* key)
 			tmp = tmp->next;
 		if (tmp->next != NULL)
 		{
-
+			ListNode* aux = tmp->next;
+			tmp->next = aux->next; //tmp->next->next;
+			deleteNode(aux);
 		}
 	}
 }
