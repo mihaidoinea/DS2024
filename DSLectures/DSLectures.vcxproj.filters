@@ -21,6 +21,9 @@
     <ClCompile Include="DS04.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DS05.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt">

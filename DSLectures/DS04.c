@@ -3,7 +3,7 @@
 #include "ListUtil.h"
 #define LINE_SIZE 256
 
-void main()
+void DS04()
 {
 	struct Node list0 = { .info = NULL, .next = NULL, .prev = NULL};
 	struct Node* list1 = NULL;

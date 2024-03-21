@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="DS02.c" />
     <ClCompile Include="DS04.c" />
+    <ClCompile Include="DS05.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />
