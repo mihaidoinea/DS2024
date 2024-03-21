@@ -65,6 +65,25 @@ void deleteList(ListNode** pHeadList)
 		deleteNode(tmp);
 	}
 }
+
+void displayListBothWays(ListNode* head)
+{
+	if (head)
+	{
+		while (head->next)
+		{
+			printStudent(head->info);
+			head = head->next;
+		}
+		printStudent(head->info);
+		printf("----------Reversed order----------\n");
+		while (head)
+		{
+			printStudent(head->info);
+			head = head->prev;
+		}
+	}
+}
 void deleteNodeByKey(ListNode** head, const char* key)
 {
 
