@@ -32,9 +32,11 @@ void main()
 			//printStudent(stud);
 			//ListNode* node = createNode(stud);
 			//insertStudent(&headList, stud);
-			headList = insertHead_SLNode(headList, stud);
+			//headList = insertHead_SLNode(headList, stud);
+			insertTail_DLNode(&headList, stud);
 		}
 		//data structure operation
+		displayNormalAndReversed(headList);
 		deleteList(&headList);
 		headList = deleteNodeByKey(headList, "Albu Cristina");
 	}

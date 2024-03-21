@@ -40,6 +40,37 @@ PListNode insertHead_SLNode(PListNode list, Student* stud)
 	return node;
 }
 
+void displayNormalAndReversed(ListNode* head) {
+	while (head->next) {
+		printStudent(head->info);
+		head = head->next;
+	}
+	printStudent(head->info);
+	printf("\n");
+	printf("Reversed order:\n");
+	while (head) {
+		printStudent(head->info);
+		head = head->prev;
+	}
+}
+
+void insertTail_DLNode(ListNode** list, Student* stud)
+{
+	ListNode* node = createNode(stud);
+	if (*list == NULL)
+	{
+		*list = node;
+	}
+	else
+	{
+		ListNode* tmp = *list;
+		while (tmp->next)
+			tmp = tmp->next;
+		node->prev = tmp;
+		tmp->next = node;
+	}
+}
+
 void deleteList(ListNode** list)
 {
 	while (*list != NULL)
@@ -55,26 +86,29 @@ void deleteList(ListNode** list)
 
 ListNode* deleteNodeByKey(ListNode* list, const char* key)
 {
-	if (strcmp(list->info->name, key) == 0)
+	if (list)
 	{
-		ListNode* tmp = list;
-		list = list->next;
-		printStudent(tmp->info);
-		free(tmp->info->name);
-		free(tmp->info);
-		free(tmp);
-		return list;
-	}
-	else
-	{
-		ListNode* tmp = list;
-		while (tmp->next != NULL && strcmp(tmp->next->info->name, key) != 0)
-			tmp = tmp->next;
-		if (tmp->next != NULL)
+		if (strcmp(list->info->name, key) == 0)
 		{
-			ListNode* aux = tmp->next;
-			tmp->next = aux->next; //tmp->next->next;
-			deleteNode(aux);
+			ListNode* tmp = list;
+			list = list->next;
+			printStudent(tmp->info);
+			free(tmp->info->name);
+			free(tmp->info);
+			free(tmp);
+			return list;
+		}
+		else
+		{
+			ListNode* tmp = list;
+			while (tmp->next != NULL && strcmp(tmp->next->info->name, key) != 0)
+				tmp = tmp->next;
+			if (tmp->next != NULL)
+			{
+				ListNode* aux = tmp->next;
+				tmp->next = aux->next; //tmp->next->next;
+				deleteNode(aux);
+			}
 		}
 	}
 }
