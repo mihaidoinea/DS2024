@@ -33,5 +33,10 @@ void main()
 			pHeadList = insertListStudent(pHeadList, stud);
 		}
 		//data structure operation
+		displayList(pHeadList);
+		deleteNodeByKey(&pHeadList, "Albu Cristina");
+		printf("-------------After delete--------------\n");
+		displayList(pHeadList);
+		//deleteList(&pHeadList);
 	}
 }

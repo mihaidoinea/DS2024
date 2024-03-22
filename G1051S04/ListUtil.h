@@ -34,3 +34,38 @@ ListNode* insertListStudent(ListNode* headList, Student* stud)
 	node->next = headList;
 	return node;
 }
+void displayList(ListNode* headList)
+{
+	while (headList)
+	{
+		printStudent(headList->info);
+		headList = headList->next;
+	}
+}
+void deleteNodeByKey(PListNode* pHeadList, const char* key)
+{
+	if (*pHeadList != NULL)
+	{
+		if (strcmp((*pHeadList)->info->name, key) == 0)
+		{
+			ListNode* tmp = *pHeadList;
+			*pHeadList = tmp->next;
+			deleteNode(tmp);
+		}
+		else
+		{
+			ListNode* iterator = *pHeadList;
+			while (iterator->next != NULL &&
+				strcmp(iterator->next->info->name, key) != 0)
+			{
+				iterator = iterator->next;
+			}
+			if (iterator->next != NULL)
+			{
+				ListNode* tmp = iterator->next;
+				iterator->next = tmp->next;
+				deleteNode(tmp);
+			}
+		}
+	}
+}
