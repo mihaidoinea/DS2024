@@ -29,14 +29,16 @@ void main()
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
 			//printStudent(stud);
-			//insertStudent(&pHeadList, stud);
-			pHeadList = insertListStudent(pHeadList, stud);
+			//insertHead_SLNode(&pHeadList, stud);
+			//pHeadList = insertHead_SLNode(pHeadList, stud);
+			pHeadList = insertTail_DLNode(pHeadList, stud);
 		}
 		//data structure operation
 		displayList(pHeadList);
 		deleteNodeByKey(&pHeadList, "Albu Cristina");
-		printf("-------------After delete--------------\n");
+		printf("-------------After delete by key--------------\n");
 		displayList(pHeadList);
-		//deleteList(&pHeadList);
+		printf("-------------Deleting list--------------\n");
+		deleteList(&pHeadList);
 	}
 }

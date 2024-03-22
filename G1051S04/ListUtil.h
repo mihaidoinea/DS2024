@@ -3,6 +3,7 @@
 #include "DataUtil.h"
 typedef struct Node
 {
+	struct Node* prev;
 	Student* info;
 	struct Node* next;
 }ListNode, * PListNode;
@@ -11,7 +12,7 @@ ListNode* createNode(Student* stud)
 {
 	ListNode* node = (ListNode*)malloc(sizeof(ListNode));
 	node->info = stud;
-	node->next = NULL;
+	node->next = node->prev = NULL;
 	return node;
 }
 void deleteNode(ListNode* node)
@@ -22,13 +23,13 @@ void deleteNode(ListNode* node)
 		free(node);
 	}
 }
-void insertStudent(ListNode** headList, Student* stud)
-{
-	ListNode* node = createNode(stud);
-	node->next = *headList;
-	*headList = node;
-}
-ListNode* insertListStudent(ListNode* headList, Student* stud)
+//void insertHead_SLNode(ListNode** headList, Student* stud)
+//{
+//	ListNode* node = createNode(stud);
+//	node->next = *headList;
+//	*headList = node;
+//}
+ListNode* insertHead_SLNode(ListNode* headList, Student* stud)
 {
 	ListNode* node = createNode(stud);
 	node->next = headList;
@@ -67,5 +68,31 @@ void deleteNodeByKey(PListNode* pHeadList, const char* key)
 				deleteNode(tmp);
 			}
 		}
+	}
+}
+void deleteList(ListNode** pHeadList)
+{
+	while (*pHeadList)
+	{
+		ListNode* tmp = *pHeadList;
+		*pHeadList = (*pHeadList)->next;
+		printStudent(tmp->info);
+		deleteNode(tmp);
+	}
+}
+//DoubleLinkedList functions
+ListNode* insertTail_DLNode(ListNode* headList, Student* stud)
+{
+	ListNode* node = createNode(stud);
+	if (headList == NULL)
+	{
+		return node;
+	}
+	else
+	{
+		while (headList->next)
+			headList = headList->next;
+		node->prev = headList;
+		headList->next = node;
 	}
 }
