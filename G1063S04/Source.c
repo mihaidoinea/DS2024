@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DataUtil.h"
-#include "ListUtil.h"
+#include "StackUtil.h"
 #define LINE_SIZE 256
 
 void main()
@@ -10,8 +10,7 @@ void main()
 	//PListNode plist3 = NULL;
 	
 	//struct Node* plist5 = NULL;
-
-	ListNode* pHeadList = NULL;
+	StackNode* stack = NULL;
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -29,20 +28,10 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			//printStudent(stud);
-			insertStudentDL(&pHeadList, stud);
-			//pHeadList = insertStudentSL(pHeadList, stud);
+			pushNode(&stack, stud);
 		}
-		//data structure operation
-		traverseList(pHeadList);
-		printf("---------------Stergerea nodurilor----------------\n");
-		deleteList(&pHeadList);
-		//deleteStudent(&pHeadList, "Popa Maria");
-		/*PListNode tmp = pHeadList;
-		while (tmp != NULL)
-		{
-			printStudent(tmp->info);
-			tmp = tmp->next;
-		}*/
+
+		Student* tmp = popNode(&stack);
+		printStudent(tmp);
 	}
 }
