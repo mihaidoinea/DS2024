@@ -1,16 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DataUtil.h"
-#include "ListUtil.h"
+#include "StackUtil.h"
 
 #define LINE_SIZE 256
 void main()
 {
-	struct Node list0 = {.info = NULL, .next = NULL};
-	struct Node* list1 = NULL;
-	ListNode list2 = { .info = NULL, .next = NULL };
-	ListNode* list3 = NULL;
-	PListNode list4 = NULL;
-	ListNode* headList = NULL;
+	StackNode* stack = NULL;
 
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -29,15 +24,9 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			//printStudent(stud);
-			//ListNode* node = createNode(stud);
-			//insertStudent(&headList, stud);
-			//headList = insertHead_SLNode(headList, stud);
-			insertTail_DLNode(&headList, stud);
+			
 		}
 		//data structure operation
-		displayNormalAndReversed(headList);
-		deleteList(&headList);
-		headList = deleteNodeByKey(headList, "Albu Cristina");
+
 	}
 }

@@ -34,5 +34,8 @@
     <ClInclude Include="ListUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StackUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
