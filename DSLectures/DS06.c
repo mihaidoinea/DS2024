@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "DataUtil.h"
 #include "QueueUtil.h"
 #define LINE_SIZE 256
 
@@ -25,7 +24,14 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
+			putNode(&queue, stud);
 		}
 		//data structure operation
+		Student* inf = NULL;
+		while ((inf = popNode(&queue)) != NULL)
+		{
+			printStudent(inf);
+		}
+		
 	}
 }

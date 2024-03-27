@@ -4,7 +4,7 @@ int suma(int x, int y) {
 	return z;
 }
 
-void main()
+void DS05()
 {
 	int a = suma(3, 8);
 }
