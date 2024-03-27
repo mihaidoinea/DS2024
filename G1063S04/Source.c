@@ -30,8 +30,12 @@ void main()
 			Student* stud = createStudent(name, income, reference);
 			pushNode(&stack, stud);
 		}
+		while (stack)
+		{
+			Student* tmp = popNode(&stack);
+			printStudent(tmp);
+			deleteStudent(tmp);
+		}
 
-		Student* tmp = popNode(&stack);
-		printStudent(tmp);
 	}
 }
