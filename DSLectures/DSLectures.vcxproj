@@ -130,6 +130,7 @@
     <ClCompile Include="DS02.c" />
     <ClCompile Include="DS04.c" />
     <ClCompile Include="DS05.c" />
+    <ClCompile Include="DS06.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />
@@ -138,6 +139,7 @@
     <ClInclude Include="DataUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="QueueUtil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -24,6 +24,9 @@
     <ClCompile Include="DS05.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DS06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt">
@@ -38,6 +41,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
