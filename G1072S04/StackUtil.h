@@ -6,3 +6,53 @@ typedef struct Node
 	struct Node* next;
 }StackNode, *PStackNode;
 
+StackNode* createNode(Student* info)
+{
+	StackNode* node = (StackNode*)malloc(sizeof(StackNode));
+	node->info = info;
+	node->next = NULL;
+	return node;
+}
+
+void pushNode(StackNode** stack, Student* info)
+{
+	StackNode* node = createNode(info);
+	node->next = (*stack);
+	*stack = node;
+}
+Student* popNode(StackNode** stack)
+{
+	Student* info = NULL;
+	if (*stack != NULL)
+	{
+		info = (*stack)->info;
+		StackNode* tmp = (*stack);
+		(*stack) = tmp->next;
+		free(tmp);
+	}
+	return info;
+}
+void deleteStack(StackNode** stack)
+{
+	while (*stack)
+	{
+		Student* info = popNode(stack);
+		printStudent(info);
+		deleteStudent(info);
+	}
+}
+
+void displayStack(StackNode** stack)
+{
+	StackNode* tmpStack = NULL;
+	while (*stack)
+	{
+		Student* info = popNode(stack);
+		printStudent(info);
+		pushNode(&tmpStack, info);
+	}
+	while (tmpStack)
+	{
+		pushNode(stack, popNode(&tmpStack));
+	}
+}

@@ -40,6 +40,21 @@ PListNode insertHead_SLNode(PListNode list, Student* stud)
 	return node;
 }
 
+void insertTail_SLNode(ListNode** list, Student* stud)
+{
+	ListNode* node = createNode(stud);
+	if (*list == NULL)
+		*list = node;
+	else
+	{
+		ListNode* tmp = *list;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = node;
+	}
+}
+
+
 void displayNormalAndReversed(ListNode* head) {
 	while (head->next) {
 		printStudent(head->info);
