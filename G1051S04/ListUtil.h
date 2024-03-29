@@ -1,14 +1,14 @@
 #pragma once
 #include "main.h"
 #include "DataUtil.h"
-typedef struct Node
+typedef struct NodeL
 {
-	struct Node* prev;
+	struct NodeL* prev;
 	Student* info;
-	struct Node* next;
+	struct NodeL* next;
 }ListNode, * PListNode;
 
-ListNode* createNode(Student* stud)
+ListNode* createListNode(Student* stud)
 {
 	ListNode* node = (ListNode*)malloc(sizeof(ListNode));
 	node->info = stud;
@@ -25,13 +25,13 @@ void deleteNode(ListNode* node)
 }
 //void insertHead_SLNode(ListNode** headList, Student* stud)
 //{
-//	ListNode* node = createNode(stud);
+//	ListNode* node = createListNode(stud);
 //	node->next = *headList;
 //	*headList = node;
 //}
 ListNode* insertHead_SLNode(ListNode* headList, Student* stud)
 {
-	ListNode* node = createNode(stud);
+	ListNode* node = createListNode(stud);
 	node->next = headList;
 	return node;
 }
@@ -83,10 +83,11 @@ void deleteList(ListNode** pHeadList)
 //DoubleLinkedList functions
 ListNode* insertTail_DLNode(ListNode* headList, Student* stud)
 {
-	ListNode* node = createNode(stud);
+	ListNode* node = createListNode(stud);
+	ListNode* result = headList;
 	if (headList == NULL)
 	{
-		return node;
+		result = node;
 	}
 	else
 	{
@@ -95,4 +96,5 @@ ListNode* insertTail_DLNode(ListNode* headList, Student* stud)
 		node->prev = headList;
 		headList->next = node;
 	}
+	return result;
 }
