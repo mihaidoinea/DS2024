@@ -1,16 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DataUtil.h"
 #include "ListUtil.h"
+#include "StackUtil.h"
+
 #define LINE_SIZE 256
 
 void main()
 {
-	//struct Node list1 = {.info = NULL, .next=NULL};
-	//ListNode list2 = {.info = NULL, .next = NULL};
-	//PListNode plist3 = NULL;
-	ListNode* pHeadList = NULL;
-	//struct Node* plist5 = NULL;
-
+	
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
