@@ -1,16 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DataUtil.h"
-#include "StackUtil.h"
+#include "QueueUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-	//struct Node list1 = {.info = NULL, .next=NULL};
-	//ListNode list2 = {.info = NULL, .next = NULL};
-	//PListNode plist3 = NULL;
-	
-	//struct Node* plist5 = NULL;
-	StackNode* stack = NULL;
+	QueueNode* queueTail = NULL;
+
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -28,15 +24,7 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			pushNode(&stack, stud);
-		}
-		displayStack(&stack);
-
-		while (stack)
-		{
-			Student* tmp = popNode(&stack);
-			printStudent(tmp);
-			deleteStudent(tmp);
+			putNode(&queueTail, stud);
 		}
 	}
 }
