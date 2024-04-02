@@ -7,7 +7,8 @@
 
 void main()
 {
-	
+	StackNode* topStack = NULL;
+
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -25,7 +26,15 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
+			pushNode(&topStack, stud);
+			//topStack = pushNode(topStack, stud);
 		}
 		//data structure operation
+		Student* info = popNode(&topStack);
+		printStudent(info);
+
+		displayStack(&topStack);
+
+		deleteStack(&topStack);
 	}
 }
