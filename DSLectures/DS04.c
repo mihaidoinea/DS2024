@@ -26,11 +26,11 @@ void DS04()
 			income = atof(token);
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
-			//Student* stud = createStudent(name, income, reference);
-			//printStudent(stud);
-			//insertStudent(&headList, stud);
+			Student* stud = createStudent(name, income, reference);
+			printStudent(stud);
+			insertStudent(&headList, stud);
 		}
-		//deleteList(&headList);
 		//data structure operation
+		deleteList(&headList);
 	}
 }
