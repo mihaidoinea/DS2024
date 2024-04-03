@@ -1,14 +1,14 @@
 #pragma once
 #include "main.h"
 #include "DataUtil.h"
-typedef struct Node
+typedef struct NodeL
 {
 	Student* info;
-	struct Node* next;
-	struct Node* prev;
+	struct NodeL* next;
+	struct NodeL* prev;
 }ListNode, *PListNode;
 
-ListNode* createNode(Student* stud)
+ListNode* createListNode(Student* stud)
 {
 	ListNode* node = NULL;
 	node = (ListNode*)malloc(sizeof(ListNode));
@@ -29,7 +29,7 @@ void deleteNode(ListNode* node)
 
 void insertStudentDL(ListNode** headList, Student* stud)
 {
-	ListNode* node = createNode(stud);
+	ListNode* node = createListNode(stud);
 	if (*headList != NULL)
 	{
 		node->next = *headList;
@@ -75,13 +75,13 @@ void deleteList(ListNode** headList)
 
 ListNode* insertStudentSL(ListNode* headList, Student* stud)
 {
-	ListNode* node = createNode(stud);
+	ListNode* node = createListNode(stud);
 	node->next = headList;
 	return node;
 }
 //void insertStudentSL(ListNode** headList, Student* stud)
 //{
-//	ListNode* node = createNode(stud);
+//	ListNode* node = createListNode(stud);
 //	node->next = *headList;
 //	*headList = node;
 //}

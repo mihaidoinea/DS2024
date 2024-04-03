@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DataUtil.h"
 #include "QueueUtil.h"
+#include "ListUtil.h"
 #define LINE_SIZE 256
 
 void main()
@@ -26,5 +27,11 @@ void main()
 			Student* stud = createStudent(name, income, reference);
 			putNode(&queueTail, stud);
 		}
+		Student* info = NULL;
+		while ((info = getNode(&queueTail)) != NULL)
+		{
+			printStudent(info);
+		}
+		//deleteQueue(&queueTail);
 	}
 }
