@@ -1,7 +1,5 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "QueueUtil.h"
 #define LINE_SIZE 256
-
 void main()
 {
 	//empty queue

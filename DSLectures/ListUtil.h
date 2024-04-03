@@ -1,13 +1,13 @@
 #pragma once
 #include "DataUtil.h"
-typedef struct Node
+typedef struct NodeL
 {
 	Student* info;
-	struct Node* next;
-	struct Node* prev;
+	struct NodeL* next;
+	struct NodeL* prev;
 }ListNode, *PListNode;
 
-ListNode* createNode(Student* stud)
+ListNode* createListNode(Student* stud)
 {
 	ListNode* node = NULL;
 	node = (ListNode*)malloc(sizeof(ListNode));
@@ -17,7 +17,7 @@ ListNode* createNode(Student* stud)
 }
 void insertStudent(ListNode** pHeadList, Student* stud)
 {
-	ListNode* node = createNode(stud);
+	ListNode* node = createListNode(stud);
 	//connect the node to the struct
 	if (*pHeadList == NULL)
 		*pHeadList = node;

@@ -13,7 +13,7 @@ typedef struct Student
 	Reference reference;
 }Student;
 
-Student* createStudent(const char* name, float income, unsigned short ref)
+inline Student* createStudent(const char* name, float income, unsigned short ref)
 {
 	//1.declare variable
 	Student* stud = NULL;
@@ -28,7 +28,7 @@ Student* createStudent(const char* name, float income, unsigned short ref)
 	return stud;
 }
 
-void printStudent(Student* stud)
+inline void printStudent(Student* stud)
 {
 	if (stud != NULL)
 	{
@@ -45,7 +45,7 @@ void printStudent(Student* stud)
 		}
 	}
 }
-void deleteStudent(Student* stud)
+inline void deleteStudent(Student* stud)
 {
 	if (stud != NULL)
 	{

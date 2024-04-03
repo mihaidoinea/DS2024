@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include "main.h"
 typedef struct Letter
 {
 	int : 5;
