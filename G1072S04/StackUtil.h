@@ -1,12 +1,12 @@
 #pragma once
 #include "DataUtil.h"
-typedef struct Node
+typedef struct NodeS
 {
 	Student* info;
-	struct Node* next;
+	struct NodeS* next;
 }StackNode, *PStackNode;
 
-StackNode* createNode(Student* info)
+StackNode* createStackNode(Student* info)
 {
 	StackNode* node = (StackNode*)malloc(sizeof(StackNode));
 	node->info = info;
@@ -16,7 +16,7 @@ StackNode* createNode(Student* info)
 
 void pushNode(StackNode** stack, Student* info)
 {
-	StackNode* node = createNode(info);
+	StackNode* node = createStackNode(info);
 	node->next = (*stack);
 	*stack = node;
 }

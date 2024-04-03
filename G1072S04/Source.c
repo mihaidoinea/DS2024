@@ -1,15 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "DataUtil.h"
-#include "StackUtil.h"
-#include "ListUtil.h"
-#include "stdbool.h"
+#include "QueueUtil.h"
 
 #define LINE_SIZE 256
 void main()
 {
-	StackNode* stack = NULL;
-	ListNode* list1 = NULL;
-	ListNode* list2 = NULL;
+	QueueNode* tailQueue = NULL;
 
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -28,17 +23,10 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			//pushNode(&stack, stud);
-			list1 = insertHead_SLNode(list1, stud);
-			insertTail_SLNode(&list2, stud);
+
 		}
 
 		//data structure operation
-		//Student* info = popNode(&stack);
-		//printStudent(info);
-		bool test = checkMirroredList(list1, list2);
-		displayStack(&stack);
 		
-		deleteStack(&stack);
 	}
 }

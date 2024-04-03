@@ -1,10 +1,10 @@
 #pragma once
 #include "DataUtil.h"
-typedef struct Node
+typedef struct NodeL
 {
-	struct Node* prev;
+	struct NodeL* prev;
 	Student* info;
-	struct Node* next;
+	struct NodeL* next;
 }ListNode, *PListNode;
 
 void deleteNode(ListNode* node)
@@ -16,7 +16,7 @@ void deleteNode(ListNode* node)
 	}
 }
 
-ListNode* createNode(Student* stud)
+ListNode* createListNode(Student* stud)
 {
 	ListNode* node = NULL;
 	node = (ListNode*)malloc(sizeof(ListNode));
@@ -29,20 +29,20 @@ ListNode* createNode(Student* stud)
 //void insertHead_SLNode(PListNode* list, Student* stud)
 //{
 //	//PListNode node;
-//	ListNode* node = createNode(stud);
+//	ListNode* node = createListNode(stud);
 //	node->next = *list;
 //	*list = node;
 //}
 PListNode insertHead_SLNode(PListNode list, Student* stud)
 {
-	PListNode node = createNode(stud);
+	PListNode node = createListNode(stud);
 	node->next = list;
 	return node;
 }
 
 void insertTail_SLNode(ListNode** list, Student* stud)
 {
-	ListNode* node = createNode(stud);
+	ListNode* node = createListNode(stud);
 	if (*list == NULL)
 		*list = node;
 	else
@@ -71,7 +71,7 @@ void displayNormalAndReversed(ListNode* head) {
 
 void insertTail_DLNode(ListNode** list, Student* stud)
 {
-	ListNode* node = createNode(stud);
+	ListNode* node = createListNode(stud);
 	if (*list == NULL)
 	{
 		*list = node;
