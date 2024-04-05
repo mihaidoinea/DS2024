@@ -27,6 +27,9 @@ void main()
 			putNode(&tailQueue, stud);
 		}
 		//data structure operation
+
+		displayQueue(&tailQueue);
+
 		Student* info = NULL;
 		while ((info = getNode(&tailQueue)) != NULL)
 		{

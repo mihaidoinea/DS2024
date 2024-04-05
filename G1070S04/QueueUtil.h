@@ -58,3 +58,16 @@ Student* getNode(QueueNode** tailQueue)
 	}
 	return result;
 }
+
+void displayQueue(QueueNode** tailQueue)
+{
+	Student* info = peekNode(*tailQueue);
+	Student* tmp = NULL;
+	while (tmp != info)
+	{
+		tmp = getNode(tailQueue);
+		putNode(tailQueue, tmp);
+		printStudent(tmp);
+		tmp = peekNode(*tailQueue);
+	}
+}
