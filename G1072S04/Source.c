@@ -23,10 +23,19 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-
+			putNode(&tailQueue, stud);
 		}
-
 		//data structure operation
+		displayQueue(&tailQueue);
+		printf("-------------Second pass -----------\n");
+		displayQueue(&tailQueue);
+
+		Student* info = NULL;
+		while ((info = getNode(&tailQueue)) != NULL)
+		{
+			printStudent(info);
+			deleteStudent(info);
+		}
 		
 	}
 }
