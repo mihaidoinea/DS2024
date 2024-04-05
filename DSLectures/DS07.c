@@ -1,11 +1,10 @@
-#include "QueueUtil.h"
+#include "HashUtil.h"
 #define LINE_SIZE 256
-void DS06()
-{
-	//empty queue
-	QueueNode* queue = NULL;
 
+void main()
+{
 	FILE* pFile = fopen("Data.txt", "r");
+	HashTable hashTable = { .items = NULL, .size = 0 };
 	if (pFile)
 	{
 		char delimiter[] = ",";
@@ -22,14 +21,11 @@ void DS06()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			putNode(&queue, stud);
+			putHashTable(&hashTable, stud);
 		}
-		//data structure operation
-		Student* inf = NULL;
-		while ((inf = popNode(&queue)) != NULL)
-		{
-			printStudent(inf);
-		}
-		
+		printf("\n----------------Hash Table Items--------------------\n");
+		displayStudents(hashTable.items, hashTable.size);
+
+		fclose(pFile);
 	}
 }
