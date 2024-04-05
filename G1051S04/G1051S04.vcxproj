@@ -133,6 +133,7 @@
     <ClInclude Include="DataUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="QueueUtil.h" />
     <ClInclude Include="StackUtil.h" />
   </ItemGroup>
   <ItemGroup>
