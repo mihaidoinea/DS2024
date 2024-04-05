@@ -19,12 +19,12 @@ void pushNode(StackNode** topStack, Student* stud)
 	node->next = *topStack;
 	*topStack = node;
 }
-Student* peekNode(StackNode** topStack)
+Student* peekNode(StackNode* topStack)
 {
 	Student* result = NULL;
-	if (*topStack != NULL)
+	if (topStack != NULL)
 	{
-		result = (*topStack)->info;
+		result = topStack->info;
 	}
 	return result;
 }
@@ -41,9 +41,20 @@ Student* popNode(StackNode** topStack)
 	return result;
 }
 
-void displayStack(StackNode** topStack)
+void displayStack(StackNode** stack)
 {
-
+	StackNode* tmp = NULL;
+	Student* info = NULL;
+	while ((info = peekNode(*stack)) != NULL)
+	{
+		popNode(stack);
+		pushNode(&tmp, info);
+		printStudent(info);
+	}
+	while ((info = popNode(&tmp)) != NULL)
+	{
+		pushNode(stack, info);
+	}
 }
 
 void  deleteStack(StackNode** topStack)
