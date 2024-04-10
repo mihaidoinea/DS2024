@@ -40,5 +40,8 @@
     <ClInclude Include="QueueUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="HashUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
