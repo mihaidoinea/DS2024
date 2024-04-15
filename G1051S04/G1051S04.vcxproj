@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataUtil.h" />
+    <ClInclude Include="HashUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="QueueUtil.h" />
