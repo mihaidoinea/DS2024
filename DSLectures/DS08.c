@@ -1,10 +1,11 @@
-#include "HashUtil.h"
+#include "PQueueUtil.h"
 #define LINE_SIZE 256
 
-void DS07()
+void main()
 {
+	PriorityQueue pQueue = { .items = NULL, .position = 0, .size=0 };
+
 	FILE* pFile = fopen("Data.txt", "r");
-	HashTable hashTable = { .items = NULL, .size = 0 };
 	if (pFile)
 	{
 		char delimiter[] = ",";
@@ -21,11 +22,8 @@ void DS07()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			putHashTable(&hashTable, stud);
+			enqueue(&pQueue, stud);
 		}
-		printf("\n----------------Hash Table Items--------------------\n");
-		displayStudents(hashTable.items, hashTable.size);
-
-		fclose(pFile);
+		int a = 2;
 	}
 }

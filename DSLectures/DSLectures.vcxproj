@@ -132,6 +132,7 @@
     <ClCompile Include="DS05.c" />
     <ClCompile Include="DS06.c" />
     <ClCompile Include="DS07.c" />
+    <ClCompile Include="DS08.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />
@@ -141,6 +142,7 @@
     <ClInclude Include="HashUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="PQueueUtil.h" />
     <ClInclude Include="QueueUtil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

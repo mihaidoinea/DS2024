@@ -30,6 +30,9 @@
     <ClCompile Include="DS07.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DS08.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt">
@@ -50,6 +53,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HashUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PQueueUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
