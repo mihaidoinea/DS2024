@@ -30,5 +30,10 @@ void main()
 		//data structure operation
 		Student* info = getHT(hashTable, "Popa Maria");
 		printStudent(info);
+
+		deleteHT(hashTable, "Popa Maria");
+
+		info = getHT(hashTable, "Popa Maria");
+		printStudent(info);
 	}
 }

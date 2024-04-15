@@ -26,12 +26,49 @@ int fHash(const char* key)
 	return key[0] % HASHT_SIZE;
 }
 
+void deleteHT(HashNode** hashTable, const char* key)
+{
+	int index = fHash(key);
+	HashNode* collisionList = hashTable[index];
+	if (collisionList != NULL)
+	{
+		if (strcmp(collisionList->info->name, key) == 0)
+		{
+			hashTable[index] = collisionList->next;
+			deleteStudent(collisionList->info);
+			free(collisionList);
+		}
+		else
+		{
+			while (collisionList->next)
+			{
+				if (strcmp(collisionList->next->info->name, key) == 0)
+				{
+					HashNode* tmp = collisionList->next;
+					collisionList->next = tmp->next;
+					deleteStudent(tmp->info);
+					free(tmp);
+				}
+				collisionList = collisionList->next;
+			}
+		}
+	}
+}
+
 Student* getHT(HashNode** hashTable, const char* key)
 {
 	//compute hash value
+	int index = fHash(key);
 	//get the list
+	HashNode* collisionList = hashTable[index];
 	//search for the key
-	//return result
+	while (collisionList)
+	{
+		if (strcmp(key, collisionList->info->name) == 0)
+			return collisionList->info;
+		collisionList = collisionList->next;
+	}
+	return NULL;
 }
 
 void initHashTable(HashNode*** hashTable)
