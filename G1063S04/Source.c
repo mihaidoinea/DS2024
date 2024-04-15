@@ -1,13 +1,17 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "DataUtil.h"
-#include "QueueUtil.h"
-#include "ListUtil.h"
+#include "HashUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-	QueueNode* queueTail = NULL;
-
+	HashTable hashTable = {.buckets=NULL, .size = 0};
+	//
+	if (hashTable.buckets == NULL)
+	{
+		hashTable.buckets = (HashNode**)malloc(sizeof(HashNode*)*HASH_SIZE);
+		memset(hashTable.buckets, 0, sizeof(HashNode*) * HASH_SIZE);
+		hashTable.size = HASH_SIZE;
+	}
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -25,13 +29,16 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			putNode(&queueTail, stud);
+			putNode(hashTable, stud);
 		}
-		Student* info = NULL;
-		while ((info = getNode(&queueTail)) != NULL)
-		{
-			printStudent(info);
-		}
-		//deleteQueue(&queueTail);
+		Student* info = getNode(hashTable, "Popescu Andrei");
+		printStudent(info);
+
+		//displayHashTable(hashTable);
+		//deleteHashTable(hashTable);
+
+		//Popa Maria / Paunescu Aline
+		deleteNode(hashTable, "Paunescu Alina");
+
 	}
 }
