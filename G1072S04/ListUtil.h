@@ -1,5 +1,8 @@
 #pragma once
 #include "DataUtil.h"
+#include "stdbool.h"
+#include "StackUtil.h"
+
 typedef struct NodeL
 {
 	struct NodeL* prev;
@@ -126,4 +129,22 @@ ListNode* deleteNodeByKey(ListNode* list, const char* key)
 			}
 		}
 	}
+}
+bool checkIfMirrored(ListNode* list1, ListNode* list2)
+{
+	StackNode* stack = NULL;
+	ListNode* aux = list1;
+	while (aux)
+	{
+		pushNode(&stack, aux->info);
+		aux = aux->next;
+	}
+	while (peekNode(stack) != NULL)
+	{
+		Student* info = popNode(&stack);
+		if (list2 == NULL || (list2 != NULL && info != list2->info))
+			return false;
+		list2 = list2->next;
+	}
+	return true;
 }

@@ -20,6 +20,17 @@ void pushNode(StackNode** stack, Student* info)
 	node->next = (*stack);
 	*stack = node;
 }
+
+Student* peekNode(StackNode* stack)
+{
+	Student* info = NULL;
+	if (stack != NULL)
+	{
+		info = stack->info;
+	}
+	return info;
+}
+
 Student* popNode(StackNode** stack)
 {
 	Student* info = NULL;
