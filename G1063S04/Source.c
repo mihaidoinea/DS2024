@@ -1,17 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "HashUtil.h"
+#include "LPHashUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-	HashTable hashTable = {.buckets=NULL, .size = 0};
-	//
-	if (hashTable.buckets == NULL)
-	{
-		hashTable.buckets = (HashNode**)malloc(sizeof(HashNode*)*HASH_SIZE);
-		memset(hashTable.buckets, 0, sizeof(HashNode*) * HASH_SIZE);
-		hashTable.size = HASH_SIZE;
-	}
+
+	HashTableLP hashTable = {.items = NULL, .size = 0};
+
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -29,16 +24,9 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			putNode(hashTable, stud);
+			putStudent(&hashTable, stud);
 		}
-		Student* info = getNode(hashTable, "Popescu Andrei");
-		printStudent(info);
-
-		//displayHashTable(hashTable);
-		//deleteHashTable(hashTable);
-
-		//Popa Maria / Paunescu Aline
-		deleteNode(hashTable, "Paunescu Alina");
+		displayStudents(hashTable);
 
 	}
 }
