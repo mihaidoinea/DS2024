@@ -98,3 +98,45 @@ ListNode* insertTail_DLNode(ListNode* headList, Student* stud)
 	}
 	return result;
 }
+
+ListNode* convertToMirroredList(ListNode* list)
+{
+	ListNode* headDL = NULL;
+	ListNode* middle = NULL;
+	while (list != NULL)
+	{
+		Student* info = list->info;
+		ListNode* node1 = createListNode(info);
+		ListNode* node2 = createListNode(info);
+		node1->next = node2;
+		node2->prev = node1;
+		if (headDL == NULL)
+		{
+			node1->prev = node2;
+			node2->next = node1;
+			headDL = middle = node1;
+		}
+		else
+		{
+			node1->prev = middle;
+			node2->next = middle->next;
+			middle->next = node1;
+			node2->next->prev = node2;
+			middle = node1;
+		}
+		list = list->next;
+	}
+	return headDL;
+}
+void displayDList(ListNode* headDL)
+{
+	ListNode* first = headDL;
+	if (first)
+	{
+		do
+		{
+			printStudent(headDL->info);
+			headDL = headDL->next;
+		} while (first != headDL);
+	}
+}

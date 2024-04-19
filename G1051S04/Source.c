@@ -1,12 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "DataUtil.h"
-#include "QueueUtil.h"
-
+#include "ListUtil.h"
+#include "HashUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-
+	ListNode* list = NULL;
+	
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -24,7 +24,11 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
+			//list = insertHead_SLNode(list, stud);
+			
 		}
 		//data structure operation
+		ListNode* headDL = convertToMirroredList(list);
+		displayDList(headDL);
 	}
 }
