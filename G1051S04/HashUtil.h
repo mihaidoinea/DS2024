@@ -100,3 +100,32 @@ void putHT(HashNode*** hashTable, Student* stud)
 	(*hashTable)[hashValue] = node;
 
 }
+Student** convertHTToArray(HashNode** hashTable, int* size)
+{
+	Student** result = NULL;
+	if (hashTable != NULL)
+	{
+		for (int i = 0; i < HASHT_SIZE; i++)
+		{
+			//if collision list is present
+			if (hashTable[i] != NULL)
+			{
+				HashNode* list = hashTable[i];
+				while (list)
+				{
+					Student* info = list->info;
+					//array resize
+					Student** aux = result;
+					result = (Student**)malloc(sizeof(Student*) * (*size + 1));
+					for (int index = 0;index < *size; index++)
+					{
+						result[index] = aux[index];
+					}
+					result[(*size)++] = info;
+					list = list->next;
+				}
+			}
+		}
+	}
+	return result;
+}

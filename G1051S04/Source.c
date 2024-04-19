@@ -5,7 +5,8 @@
 
 void main()
 {
-	ListNode* list = NULL;
+	HashNode** hashTable = NULL;
+	initHashTable(&hashTable);
 	
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -25,10 +26,14 @@ void main()
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
 			//list = insertHead_SLNode(list, stud);
-			
+			putHT(&hashTable, stud);
 		}
 		//data structure operation
-		ListNode* headDL = convertToMirroredList(list);
-		displayDList(headDL);
+		int size = 0;
+		Student** masiv = convertHTToArray(hashTable, &size);
+		for (int i = 0; i < size; i++)
+		{
+			printStudent(masiv[i]);
+		}
 	}
 }
