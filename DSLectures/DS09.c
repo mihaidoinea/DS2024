@@ -1,9 +1,9 @@
-#include "PQueueUtil.h"
+#include "TreeUtil.h"
 #define LINE_SIZE 256
 
-void DS08()
+void main()
 {
-	PriorityQueue pQueue = { .items = NULL, .position = 0, .size=0 };
+	TreeNode* root = NULL;
 
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -22,7 +22,9 @@ void DS08()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			enqueue(&pQueue, stud);
+			insertTree(&root, stud);
 		}
+		inorder(root);
+		
 	}
 }

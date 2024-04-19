@@ -133,6 +133,7 @@
     <ClCompile Include="DS06.c" />
     <ClCompile Include="DS07.c" />
     <ClCompile Include="DS08.c" />
+    <ClCompile Include="DS09.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />
@@ -144,6 +145,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="PQueueUtil.h" />
     <ClInclude Include="QueueUtil.h" />
+    <ClInclude Include="TreeUtil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
