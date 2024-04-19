@@ -57,6 +57,14 @@ void insertTail_SLNode(ListNode** list, Student* stud)
 	}
 }
 
+void displayList(ListNode* head)
+{
+	while (head)
+	{
+		printStudent(head->info);
+		head = head->next;
+	}
+}
 
 void displayNormalAndReversed(ListNode* head) {
 	while (head->next) {
@@ -147,4 +155,34 @@ bool checkIfMirrored(ListNode* list1, ListNode* list2)
 		list2 = list2->next;
 	}
 	return true;
+}
+
+ListNode* convert(ListNode* list1)
+{
+	ListNode* doubleLL = NULL;
+	ListNode* middleLL = NULL;
+	while (list1)
+	{
+		Student* info = list1->info;
+		ListNode* node1 = createListNode(info);
+		ListNode* node2 = createListNode(info);
+		if (doubleLL == NULL)
+		{
+			node1->next = node2;
+			node2->prev = node1;
+			doubleLL = middleLL = node1;
+		}
+		else
+		{
+			node1->next = node2;
+			node2->prev = node1;
+			node1->prev = middleLL;
+			node2->next = middleLL->next;
+			middleLL->next = node1;
+			node2->next->prev = node2;
+			middleLL = node1;
+		}
+		list1 = list1->next;
+	}
+	return doubleLL;
 }

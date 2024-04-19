@@ -37,6 +37,7 @@ void main()
 		printf("Are mirrored: %d\n", isMirrored);
 
 		ListNode* mirroredDLList = convert(list1);
+		displayList(mirroredDLList);
 
 	}
 }
