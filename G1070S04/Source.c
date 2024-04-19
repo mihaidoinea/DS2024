@@ -1,14 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "HashUtil.h"
+#include "ListUtil.h"
 
 #define LINE_SIZE 256
 
 void main()
 {
-	HashNode** hashTable = NULL;
-	//PHashNode* hashTable1;
-	//HashTable hashTable2;
-
+	ListNode* list = NULL;
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -26,14 +23,11 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			putHT(&hashTable, stud);
+			list = insertHead_SLNode(list, stud);
 		}
-		deleteHT(hashTable, "Popa Maria");
-		deleteHT(hashTable, "Paunescu Alina");
-		deleteHT(hashTable, "Petre Laura");
 
-		//data structure operation
-		Student* info = getHT(hashTable, "Popa Maria");
-		printStudent(info);
+		ListNode* mirroredDL = convert(list);
+		displayListBothWaysCircular(mirroredDL);
+		
 	}
 }
