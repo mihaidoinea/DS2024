@@ -135,6 +135,7 @@
     <ClInclude Include="HashUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="PQueueUtil.h" />
     <ClInclude Include="QueueUtil.h" />
     <ClInclude Include="StackUtil.h" />
   </ItemGroup>
