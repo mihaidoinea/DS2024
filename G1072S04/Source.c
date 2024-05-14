@@ -2,13 +2,13 @@
 #include "StackUtil.h"
 #include "ListUtil.h"
 #include "stdbool.h"
+#include "PQueueUtil.h"
 
 #define LINE_SIZE 256
 void main()
 {
-
-	ListNode* list1 = NULL;
-	ListNode* list2 = NULL;
+	PriorityQueue pQueue = {.items = NULL, .position = 0, .size = 0};
+	
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -26,18 +26,11 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			insertTail_SLNode(&list1, stud);
-			//insertTail_SLNode(&list1, stud);
-
-			list2 = insertHead_SLNode(list2, stud);
+			enqueue(&pQueue, stud);
 		}
 
 		//data structure operation
-		bool isMirrored = checkIfMirrored(list1, list2);
-		printf("Are mirrored: %d\n", isMirrored);
-
-		ListNode* mirroredDLList = convert(list1);
-		displayList(mirroredDLList);
-
+		Student* info = deque(&pQueue);
+		printStudent(info);
 	}
 }
