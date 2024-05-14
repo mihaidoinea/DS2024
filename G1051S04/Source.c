@@ -1,13 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "ListUtil.h"
-#include "HashUtil.h"
+#include "PQueueUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-	HashNode** hashTable = NULL;
-	initHashTable(&hashTable);
-	
+	PriorityQueue pQueue = { .items = NULL, .size = 0, .currentIndex = 0 };
+	PPriorityQueue ppQueue = NULL;
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -25,15 +23,10 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			//list = insertHead_SLNode(list, stud);
-			putHT(&hashTable, stud);
+			enque(&pQueue, stud);
 		}
 		//data structure operation
-		int size = 0;
-		Student** masiv = convertHTToArray(hashTable, &size);
-		for (int i = 0; i < size; i++)
-		{
-			printStudent(masiv[i]);
-		}
+		Student* info = deque(&pQueue);
+		printStudent(info);
 	}
 }
