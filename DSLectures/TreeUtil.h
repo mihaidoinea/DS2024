@@ -41,7 +41,7 @@ void preorder(TreeNode* root)
 	}
 }
 
-void insertTree(TreeNode** root, Student* info)
+void upsert(TreeNode** root, Student* info)
 {
 	if (*root == NULL)
 	{
@@ -55,7 +55,9 @@ void insertTree(TreeNode** root, Student* info)
 		else if ((*root)->info->reference.intRef < info->reference.intRef)
 			insertTree(&(*root)->right, info);
 		else
+		{
 			printf("Key already exists!");
-
+			(*root)->info = info;
+		}
 	}
 }
