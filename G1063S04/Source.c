@@ -1,11 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "LPHashUtil.h"
+#include "BTreeUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-
-	HashTableLP hashTable = {.items = NULL, .size = 0};
+	BinaryTree* bTree = NULL;
+	PBinaryTree bsTree = NULL;
 
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -24,9 +24,8 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			putStudent(&hashTable, stud);
+			upsertBST(&bTree, stud);
 		}
-		displayStudents(hashTable);
-
+		TreeStructure(bTree, 0);
 	}
 }

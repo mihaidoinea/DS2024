@@ -46,5 +46,8 @@
     <ClInclude Include="LPHashUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BTreeUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
