@@ -46,5 +46,8 @@
     <ClInclude Include="PQueueUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TreeUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
