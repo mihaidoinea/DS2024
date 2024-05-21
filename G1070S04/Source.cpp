@@ -1,13 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "ListUtil.h"
-#include "PQueueUtil.h"
+#include "TreeUtil.h"
 
 #define LINE_SIZE 256
 
 void main()
 {
-	PriorityQueue pQueue = { .items = NULL, .currentIndex = 0, .size = 0 };
-
+	TreeNode* root = NULL;
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -25,13 +23,11 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			enqueue(&pQueue, stud);
+			upsert(&root, stud);
 		}
-		
-		Student* info = deque(&pQueue);
-		printStudent(info);
 
-		changePrio(pQueue, index, 10000);
-
+		DisplayTreeStructure(root, 0);
+		deleteNodeByKey(&root, 255);
+		DisplayTreeStructure(root, 0);
 	}
 }

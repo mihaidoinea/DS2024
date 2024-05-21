@@ -4,3 +4,4 @@ Albu Cristina, 4300.8, 255
 Paunescu Alina, 1223.9, 32
 Ghenea Teodora, 3203.9, 33120
 Petre Laura, 1222.5, 23
+Moise Irina, 4323.2, 98
