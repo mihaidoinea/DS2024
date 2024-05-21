@@ -137,6 +137,7 @@
     <ClInclude Include="PQueueUtil.h" />
     <ClInclude Include="QueueUtil.h" />
     <ClInclude Include="StackUtil.h" />
+    <ClInclude Include="TreeUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />

@@ -1,11 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "PQueueUtil.h"
+#include "TreeUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-	PriorityQueue pQueue = { .items = NULL, .size = 0, .currentIndex = 0 };
-	PPriorityQueue ppQueue = NULL;
+	BinarySearchTree* root1 = NULL;
+	PBinarySearchTree root = NULL;
+
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -23,10 +24,12 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			enque(&pQueue, stud);
+			upsert(&root, stud);
 		}
 		//data structure operation
-		Student* info = deque(&pQueue);
-		printStudent(info);
+		displayTreeStructure(root, 0);
+		deleteNodeByKey(&root, 255);
+		displayTreeStructure(root, 0);
+
 	}
 }
