@@ -25,6 +25,8 @@ void main()
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
 			upsertBST(&bTree, stud);
+			TreeStructure(bTree, 0);
+			printf("---------------------------------------\n");
 		}
 		TreeStructure(bTree, 0);
 	}
