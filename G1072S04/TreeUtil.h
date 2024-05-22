@@ -138,6 +138,21 @@ void displayTreeStructure(TreeNode* root, int level)
 		printf("NULL\n");
 	}
 }
+void deleteFullNode(TreeNode** root, TreeNode** rSubTree)
+{
+	if ((*rSubTree)->left)
+		deleteFullNode(root, &(*rSubTree)->left);
+	else
+	{
+		//root - 65 // rSubTree - 78
+		deleteStudent((*root)->info);
+		(*root)->info = (*rSubTree)->info;
+		TreeNode* tmp = *rSubTree;
+		*rSubTree = tmp->right;
+		free(tmp);
+	}
+}
+
 void deleteNodeByKey(TreeNode** root, unsigned char key)
 {
 	if (*root != NULL)
@@ -179,17 +194,3 @@ void deleteNodeByKey(TreeNode** root, unsigned char key)
 	}
 }
 
-void deleteFullNode(TreeNode** root, TreeNode** rSubTree)
-{
-	if((*rSubTree)->left)
-		deleteFullNode(root, &(*rSubTree)->left);
-	else
-	{
-		//root - 65 // rSubTree - 78
-		deleteStudent((*root)->info);
-		(*root)->info = (*rSubTree)->info;
-		TreeNode* tmp = *rSubTree;
-		*rSubTree = tmp->right;
-		free(tmp);
-	}
-}
