@@ -1,12 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "BTreeUtil.h"
+#include "GraphUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-	BinaryTree* bTree = NULL;
-	PBinaryTree bsTree = NULL;
-
+	Graph* graph = NULL;
+	Student* input[10];
+	memset(input, 0, sizeof(input));
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -24,10 +24,19 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			upsertBST(&bTree, stud);
-			TreeStructure(bTree, 0);
-			printf("---------------------------------------\n");
+			input[index++] = stud;
 		}
-		TreeStructure(bTree, 0);
+		
+		addEdge(&graph, input[0], input[4]);
+		addEdge(&graph, input[1], input[4]);
+		addEdge(&graph, input[1], input[6]);
+		addEdge(&graph, input[2], input[5]);
+		addEdge(&graph, input[2], input[6]);
+		addEdge(&graph, input[3], input[1]);
+		addEdge(&graph, input[4], input[2]);
+		addEdge(&graph, input[5], input[0]);
+
+		printGraph(graph);
+
 	}
 }

@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="BTreeUtil.h" />
     <ClInclude Include="DataUtil.h" />
+    <ClInclude Include="GraphUtil.h" />
     <ClInclude Include="HashUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="LPHashUtil.h" />
