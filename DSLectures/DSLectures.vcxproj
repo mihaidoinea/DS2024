@@ -134,12 +134,14 @@
     <ClCompile Include="DS07.c" />
     <ClCompile Include="DS08.c" />
     <ClCompile Include="DS09.c" />
+    <ClCompile Include="DS13.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataUtil.h" />
+    <ClInclude Include="GraphUtil.h" />
     <ClInclude Include="HashUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="main.h" />

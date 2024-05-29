@@ -1,9 +1,11 @@
-#include "TreeUtil.h"
+#include "GraphUtil.h"
 #define LINE_SIZE 256
 
-void DS09()
+void main()
 {
-	TreeNode* root = NULL;
+	Student* students[10];
+	memset(students, 0, sizeof(students));
+	Node* graphList = NULL;
 
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -13,6 +15,7 @@ void DS09()
 		float income; int index = 0;
 		unsigned short reference;
 		char buffer[LINE_SIZE], name[LINE_SIZE];
+		int i = 0;
 		while (fgets(buffer, sizeof(buffer), pFile))
 		{
 			token = strtok(buffer, delimiter);
@@ -22,9 +25,14 @@ void DS09()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			upsert(&root, stud);
+			students[i++] = stud;
 		}
-		inorder(root);
-		
+		for (int i = 0; i < sizeof(students) / sizeof(Student*); i++)
+		{
+			if (students[i] != NULL)
+				insertGraphNode(&graphList, students[i]);
+		}
+		//data structure operation
+		addEdge(graphList, students[0], students[3]);
 	}
 }
