@@ -5,6 +5,7 @@ typedef struct NodeBST
 	struct NodeBST* lChild;
 	Student* info;
 	struct NodeBST* rChild;
+	int bFactor;
 }BinarySearchTree, *PBinarySearchTree;
 
 BinarySearchTree* createTreeNode(Student* info)
@@ -12,7 +13,53 @@ BinarySearchTree* createTreeNode(Student* info)
 	BinarySearchTree* node = (BinarySearchTree*)malloc(sizeof(BinarySearchTree));
 	node->info = info;
 	node->lChild = node->rChild = NULL;
+	node->bFactor = 0;
 	return node;
+}
+int max(int a, int b)
+{
+	return a > b ? a : b;
+}
+int getHeight(BinarySearchTree* root)
+{
+	if (root == NULL)
+		return 0;
+	else
+	{
+		return 1 + max(getHeight(root->lChild), getHeight(root->rChild));
+	}
+}
+BinarySearchTree* leftRotation(BinarySearchTree* pivot)
+{
+	BinarySearchTree* desc = pivot->rChild;
+	pivot->rChild = desc->lChild;
+	desc->lChild = pivot;
+	return desc;
+}
+BinarySearchTree* rightRotation(BinarySearchTree* pivot)
+{
+	BinarySearchTree* desc = pivot->lChild;
+	pivot->lChild = desc->rChild;
+	desc->rChild = pivot;
+	return desc;
+}
+void rebalance(BinarySearchTree** root)
+{
+	(*root)->bFactor = getHeight((*root)->rChild) - getHeight((*root)->lChild);
+	if ((*root)->bFactor == 2)
+	{
+		BinarySearchTree* desc = (*root)->rChild;
+		if (desc->bFactor == -1)
+			(*root)->rChild = rightRotation(desc);
+		*root = leftRotation(*root);
+	}
+	else if ((*root)->bFactor == -2)
+	{
+		BinarySearchTree* desc = (*root)->lChild;
+		if (desc->bFactor == 1)
+			(*root)->lChild = leftRotation(desc);
+		*root = rightRotation(*root);
+	}
 }
 
 void upsert(PBinarySearchTree* root, Student* stud)
@@ -33,6 +80,7 @@ void upsert(PBinarySearchTree* root, Student* stud)
 			(*root)->info = stud;
 		}
 	}
+	rebalance(root);
 }
 void displayTreeStructure(PBinarySearchTree root, int level)
 {
@@ -50,6 +98,19 @@ void displayTreeStructure(PBinarySearchTree root, int level)
 		for (int i = 0; i < level; i++)
 			printf("\t");
 		printf("NULL\n");
+	}
+}
+void deleteFullNode(BinarySearchTree** root, BinarySearchTree** rDesc)
+{
+	if ((*rDesc)->lChild)
+		deleteFullNode(root, &(*rDesc)->lChild);
+	else
+	{
+		deleteStudent((*root)->info);
+		(*root)->info = (*rDesc)->info;
+		BinarySearchTree* tmp = (*rDesc);
+		*rDesc = (*rDesc)->rChild;
+		free(tmp);
 	}
 }
 void deleteNodeByKey(PBinarySearchTree* root, unsigned char key)
@@ -78,7 +139,7 @@ void deleteNodeByKey(PBinarySearchTree* root, unsigned char key)
 			}
 			else//2 desc. node
 			{
-				deleteFullNode();
+				deleteFullNode(root, &(*root)->rChild);
 			}
 		}
 	}
