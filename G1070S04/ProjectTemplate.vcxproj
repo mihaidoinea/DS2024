@@ -131,10 +131,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataUtil.h" />
+    <ClInclude Include="GraphUtil.h" />
     <ClInclude Include="HashUtil.h" />
     <ClInclude Include="ListUtil.h" />
     <ClInclude Include="main.h" />
