@@ -1,11 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "TreeUtil.h"
+#include "GraphUtil.h"
 
 #define LINE_SIZE 256
 void main()
 {
-	TreeNode* root = NULL;
-	PTreeNode root1 = NULL;
+	Student* students[10];
+	memset(students, 0, sizeof(students));
+	Node* graph = NULL;
 
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -24,16 +25,30 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			upsert(&root, stud);
-			displayTreeStructure(root, 0);
-			printf("------------------------------\n");
+			students[index++] = stud;
 		}
 
-		//data structure operation
-		displayTreeStructure(root, 0);
-		//delete a leaf
-		deleteNodeByKey(&root, 78);
-		displayTreeStructure(root, 0);
+		//data structure operations
+		addEdge(&graph, students[0], students[3]);
+		addEdge(&graph, students[0], students[5]);
+		addEdge(&graph, students[1], students[2]);
+		addEdge(&graph, students[1], students[4]);
+		addEdge(&graph, students[2], students[3]);
+		addEdge(&graph, students[3], students[4]);
+		addEdge(&graph, students[3], students[6]);
+		addEdge(&graph, students[4], students[5]);
+		addEdge(&graph, students[5], students[6]);
+
+		displayGraph(graph);
+		int nrEl = 7;
+		MatNode** adjacencyMatrix = NULL;
+		adjacencyMatrix = (MatNode**)malloc(sizeof(MatNode*)*nrEl);
+		for (int i = 0; i < nrEl; i++)
+		{
+			adjacencyMatrix[i] = (MatNode*)malloc(sizeof(MatNode) * nrEl);
+			memset(adjacencyMatrix[i], 0, sizeof(MatNode) * nrEl);
+		}
+		convertListToMat(graph, adjacencyMatrix, nrEl);
 
 	}
 }
