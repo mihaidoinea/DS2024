@@ -4,8 +4,9 @@
 
 void main()
 {
-
-
+	Vertex* graph = NULL;
+	Student* students[10];
+	memset(students, 0, sizeof(students));
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
 	{
@@ -23,10 +24,18 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-
+			students[index++] = stud;
 		}
 		//data structure operation
-
+		addEdge(&graph, students[0], students[1]);
+		addEdge(&graph, students[0], students[4]);
+		addEdge(&graph, students[0], students[5]);
+		addEdge(&graph, students[1], students[3]);
+		addEdge(&graph, students[2], students[3]);
+		addEdge(&graph, students[2], students[4]);
+		addEdge(&graph, students[3], students[5]);
+		addEdge(&graph, students[4], students[5]);
+		displayGraph(graph);
 
 	}
 }
