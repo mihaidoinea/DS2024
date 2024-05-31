@@ -1,11 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "TreeUtil.h"
+#include "GraphUtil.h"
 #define LINE_SIZE 256
 
 void main()
 {
-	BinarySearchTree* root1 = NULL;
-	PBinarySearchTree root = NULL;
+
 
 	FILE* pFile = fopen("Data.txt", "r");
 	if (pFile)
@@ -24,14 +23,10 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			upsert(&root, stud);
-			displayTreeStructure(root, 0);
-			printf("----------------------------------\n");
+
 		}
 		//data structure operation
-		displayTreeStructure(root, 0);
-		deleteNodeByKey(&root, 255);
-		displayTreeStructure(root, 0);
+
 
 	}
 }
