@@ -39,9 +39,15 @@
     <ClCompile Include="DS13.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DS14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="BST.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

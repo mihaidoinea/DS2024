@@ -1,7 +1,7 @@
 #include "GraphUtil.h"
 #define LINE_SIZE 256
 
-void main()
+void DS13()
 {
 	Student* students[10];
 	memset(students, 0, sizeof(students));
@@ -27,12 +27,12 @@ void main()
 			Student* stud = createStudent(name, income, reference);
 			students[i++] = stud;
 		}
-		for (int i = 0; i < sizeof(students) / sizeof(Student*); i++)
+		/**or (int i = 0; i < sizeof(students) / sizeof(Student*); i++)
 		{
 			if (students[i] != NULL)
 				insertGraphNode(&graphList, students[i]);
 		}
 		//data structure operation
-		addEdge(graphList, students[0], students[3]);
+		addEdge(graphList, students[0], students[3]);*/
 	}
 }

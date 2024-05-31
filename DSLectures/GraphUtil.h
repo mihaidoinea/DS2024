@@ -29,10 +29,10 @@ Node* searchNode(Node* graphList, Student* info)
 }
 void addEdge(Node* graphList, Student* source, Student* destination)
 {
-	Node* src = searchNode(graphList, source);
+	/*Node* src = searchNode(graphList, source);
 	if(src == NULL)
 		insertGraphNode(graphList)
 	Node* dst = searchNode(graphList, destination);
 	insertNeighbour(&src->adjacencyList, dst);
-	insertNeighbour(&dst->adjacencyList, src);
+	insertNeighbour(&dst->adjacencyList, src);*/
 }
