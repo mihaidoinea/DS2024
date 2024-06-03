@@ -51,9 +51,9 @@ void upsert(TreeNode** root, Student* info)
 	else
 	{
 		if ((*root)->info->reference.intRef > info->reference.intRef)
-			insertTree(&(*root)->left, info);
+			upsert(&(*root)->left, info);
 		else if ((*root)->info->reference.intRef < info->reference.intRef)
-			insertTree(&(*root)->right, info);
+			upsert(&(*root)->right, info);
 		else
 		{
 			printf("Key already exists!");

@@ -36,9 +36,18 @@
     <ClCompile Include="DS09.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DS13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DS14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="BST.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
@@ -62,6 +71,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TreeUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

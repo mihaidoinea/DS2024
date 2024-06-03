@@ -1,7 +1,7 @@
 #include "TreeUtil.h"
 #define LINE_SIZE 256
 
-void main()
+void DS09()
 {
 	TreeNode* root = NULL;
 
@@ -22,7 +22,7 @@ void main()
 			token = strtok(NULL, delimiter);
 			reference = atoi(token);
 			Student* stud = createStudent(name, income, reference);
-			insertTree(&root, stud);
+			upsert(&root, stud);
 		}
 		inorder(root);
 		

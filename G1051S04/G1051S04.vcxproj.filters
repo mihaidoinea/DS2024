@@ -44,6 +44,9 @@
     <ClInclude Include="TreeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GraphUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data.txt">
