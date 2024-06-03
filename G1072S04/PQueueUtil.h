@@ -50,7 +50,7 @@ void ReheapDown(PriorityQueue* pQueue, int parentIndex)
 		if (pQueue->items[lChildIndex]->income > pQueue->items[parentIndex]->income)
 			maxIndex = lChildIndex;
 		if (rChildIndex < pQueue->position &&
-			pQueue->items[rChildIndex]->income > pQueue->items[parentIndex]->income)
+			pQueue->items[rChildIndex]->income > pQueue->items[maxIndex]->income)
 			maxIndex = rChildIndex;
 		if (maxIndex != parentIndex)
 		{
